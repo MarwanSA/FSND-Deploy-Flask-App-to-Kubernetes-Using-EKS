@@ -30,11 +30,11 @@ data:
     - groups:
       - system:bootstrappers
       - system:nodes
-      rolearn: arn:aws:iam::<YOUR_ACCOUNT_ID>:role/<EXISTENT_ROLE_INFORMATION>
+      rolearn: arn:aws:iam::AKIAWEUI5TWV7UEZAMY2:role/UdacityFlaskDeployCBKubectlRole
       username: system:node:{{EC2PrivateDNSName}}
     - groups:
       - system:masters
-      rolearn: arn:aws:iam::<YOUR_ACCOUNT_ID>:role/UdacityFlaskDeployCBKubectlRole
+      rolearn: arn:aws:iam::AKIAWEUI5TWV7UEZAMY2:role/UdacityFlaskDeployCBKubectlRole
       username: build
   mapUsers: |
     []
