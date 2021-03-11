@@ -185,7 +185,7 @@ Resources:
           PolicyDocument:
             Version: 2012-10-17
             Statement:
-              - Resource: !Sub arn:aws:iam::${AWS::AccountId}:role/${KubectlRoleName}
+              - Resource: !Sub arn:aws:iam::${AWS::422267690411}:role/${KubectlRoleName}
                 Effect: Allow
                 Action:
                   - iam:GetRole
@@ -253,7 +253,7 @@ Resources:
           PolicyDocument:
             Version: 2012-10-17
             Statement:
-              - Resource: !Sub arn:aws:iam::${AWS::AccountId}:role/${KubectlRoleName}
+              - Resource: !Sub arn:aws:iam::${AWS::422267690411}:role/${KubectlRoleName}
                 Effect: Allow
                 Action:
                   - sts:AssumeRole
@@ -292,7 +292,7 @@ Resources:
                   - s3:GetObject
                   - s3:PutObject
                   - s3:GetObjectVersion
-              - Resource: !Sub arn:aws:ecr:${AWS::Region}:${AWS::AccountId}:repository/${EcrDockerRepository}
+              - Resource: !Sub arn:aws:ecr:${AWS::Region}:${AWS::422267690411}:repository/${EcrDockerRepository}
                 Effect: Allow
                 Action:
                   - ecr:GetDownloadUrlForLayer
@@ -316,7 +316,7 @@ Resources:
         Image: !Ref CodeBuildDockerImage
         EnvironmentVariables:
           - Name: REPOSITORY_URI
-            Value: !Sub ${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com/${EcrDockerRepository}
+            Value: !Sub ${AWS::422267690411}.dkr.ecr.${AWS::Region}.amazonaws.com/${EcrDockerRepository}
           - Name: REPOSITORY_NAME
             Value: !Ref GitSourceRepo
           - Name: REPOSITORY_BRANCH
@@ -324,7 +324,7 @@ Resources:
           - Name: EKS_CLUSTER_NAME
             Value: !Ref EksClusterName
           - Name: EKS_KUBECTL_ROLE_ARN
-            Value: !Sub arn:aws:iam::${AWS::AccountId}:role/${KubectlRoleName}
+            Value: !Sub arn:aws:iam::${AWS::422267690411}:role/${KubectlRoleName}
         PrivilegedMode: true
       Name: !Ref AWS::StackName
       ServiceRole: !GetAtt CodeBuildServiceRole.Arn
