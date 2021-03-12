@@ -1,43 +1,14 @@
-# This is a sample aws-auth-patch.yml file. 
-# Actual aws-auth-patch.yml will be created at /System/Volumes/Data/private/tmp/aws-auth-patch.yml path.
-
-# apiVersion: v1
-# data:
-#   mapRoles: |
-#     - groups:
-#       - system:masters
-#       rolearn: arn:aws:iam::644752792305:role/UdacityFlaskDeployCBKubectlRole
-#       username: build      
-#     - groups:
-#       - system:bootstrappers
-#       - system:nodes
-#       rolearn: arn:aws:iam::644752792305:role/eksctl-simple-jwt-api-nodegroup-n-NodeInstanceRole-17C402QC9VF6L
-#       username: system:node:{{EC2PrivateDNSName}}
-#   mapUsers: |
-#     []
-# kind: ConfigMap
-# metadata:
-#   creationTimestamp: "2021-02-26T07:40:38Z"
-#   name: aws-auth
-#   namespace: kube-system
-#   resourceVersion: "5992"
-#   selfLink: /api/v1/namespaces/kube-system/configmaps/aws-auth
-#   uid: 5bf363cb-504c-4289-93ce-74257aff0de4
-#####################
-## OLD ARN: arn:aws:iam::AKIAWEUI5TWV7UEZAMY2:role/UdacityFlaskDeployCBKubectlRole
-####################
-
 apiVersion: v1
 data:
   mapRoles: |
     - groups:
       - system:bootstrappers
       - system:nodes
-      rolearn: arn:aws:iam::422267690411:role/eksctl-simple-jwt-api-cluster-ServiceRole-14PH9LAF0ARKX
+      rolearn: arn:aws:iam::422267690411:role/simple-jwt-api-stack-CodeBuildServiceRole-T7QWYRNN5CIT
       username: system:node:{{EC2PrivateDNSName}}
     - groups:
       - system:masters
-      rolearn: arn:aws:iam::422267690411:role/eksctl-simple-jwt-api-cluster-ServiceRole-14PH9LAF0ARKX
+      rolearn: arn:aws:iam::422267690411:role/simple-jwt-api-stack-CodeBuildServiceRole-T7QWYRNN5CIT
       username: build
   mapUsers: |
     []
