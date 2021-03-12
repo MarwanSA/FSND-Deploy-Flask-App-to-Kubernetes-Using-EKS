@@ -23,6 +23,9 @@
 #   resourceVersion: "5992"
 #   selfLink: /api/v1/namespaces/kube-system/configmaps/aws-auth
 #   uid: 5bf363cb-504c-4289-93ce-74257aff0de4
+#####################
+## OLD ARN: arn:aws:iam::AKIAWEUI5TWV7UEZAMY2:role/UdacityFlaskDeployCBKubectlRole
+####################
 
 apiVersion: v1
 data:
@@ -30,11 +33,11 @@ data:
     - groups:
       - system:bootstrappers
       - system:nodes
-      rolearn: arn:aws:iam::AKIAWEUI5TWV7UEZAMY2:role/UdacityFlaskDeployCBKubectlRole
+      rolearn: arn:aws:iam::422267690411:role/eksctl-simple-jwt-api-cluster-ServiceRole-14PH9LAF0ARKX
       username: system:node:{{EC2PrivateDNSName}}
     - groups:
       - system:masters
-      rolearn: arn:aws:iam::AKIAWEUI5TWV7UEZAMY2:role/UdacityFlaskDeployCBKubectlRole
+      rolearn: arn:aws:iam::422267690411:role/eksctl-simple-jwt-api-cluster-ServiceRole-14PH9LAF0ARKX
       username: build
   mapUsers: |
     []
